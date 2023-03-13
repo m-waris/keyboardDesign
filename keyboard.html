@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Keyboard</title>
+</head>
+<style>   
+ body{
+        font-size: 14px;
+        font-family:Arial, Helvetica, sans-serif;
+        background-color: black;
+    }
+    
+    .maindiv{
+        background-color: rgb(205, 220, 220);
+        width: 932px;
+        padding: 10px;
+        height:300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align-last: justify;
+    }
+    .btn{
+        background-color: aliceblue;
+        display: inline-block;
+        padding-top: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        height: 30px;
+        margin-top: 4px;
+        margin-left: 0px;
+        box-shadow: 0.5px 2px 1px rgb(0, 0, 0);
+
+        
+    }
+    .btn:hover{
+        background-color: blue;
+        color: aliceblue;
+        }
+  
+ 
+    .topBtn{
+        height: 14px;
+        font-size: 11px;
+   
+        
+    }
+    #txtid{
+        margin-top: 15px;
+        margin-left: 90px;
+        margin-bottom: 15px;
+        width: 880px;
+        height: 30px;
+
+    }
+    #ecs{ padding-right: 34px;}
+    #del{ padding-right: 51px;}
+    #tab{ padding-right: 57px;}
+    #shft{ padding-right: 86.5px;}
+    #cps{ padding-right: 40px;}
+    #entr{ padding-right: 44px;}
+    #sp{ padding-right: 110px;}
+
+</style>
+<script>
+  var text,id_;
+
+    document.addEventListener("keydown", function(event) {
+        text = document.getElementById("txtid");
+        
+        if(event.keyCode>46 && event.keyCode < 90 )
+            text.value = text.value+event.key;
+        else if(event.keyCode==8)
+            text.value=text.value.substring(0,text.value.length-1);
+
+    });
+    function keypress(id_)
+    {
+        text = document.getElementById("txtid");
+        if(id_=='sp')
+            text.value = text.value+" ";
+        else if(id_=='del')
+             text.value=text.value.substring(0,text.value.length-1);
+        else
+            text.value = text.value+id_;
+
+    }
+
+</script>
+<body>
+    <div class="txtBox" name="txtBob">
+        <input name="txt" id="txtid" readonly></input>
+    </div>
+    <div class="maindiv" id="keyboard"> 
+        <div class="topBtn btn" id="ecs" style="margin-left: 10px">esc</div>
+        <div class="topBtn btn" id="f1" onclick="keypress(id)">f1</div>
+        <div class="topBtn btn" id="f2" onclick="keypress(id)">f2</div>
+        <div class="topBtn btn" id="f3" onclick="keypress(id)">f3</div>
+        <div class="topBtn btn" id="f4" onclick="keypress(id)">f4</div>
+        <div class="topBtn btn" id="f5" onclick="keypress(id)">f5</div>
+        <div class="topBtn btn" id="f6" onclick="keypress(id)">f6</div>
+        <div class="topBtn btn" id="f7" onclick="keypress(id)">f7</div>
+        <div class="topBtn btn" id="f8" onclick="keypress(id)">f8</div>
+        <div class="topBtn btn" id="f9" onclick="keypress(id)">f9</div>
+        <div class="topBtn btn" id="f10" onclick="keypress(id)">f10</div>
+        <div class="topBtn btn" id="f11" onclick="keypress(id)">f11</div>
+        <div class="topBtn btn" id="f12" onclick="keypress(id)">f12</div>
+        <div class="topBtn btn" id="^" onclick="keypress(id)">^</div>
+        <br>
+        <div class="btn" style="margin-left: 10px">`</div>
+        <div class="btn" id="1" onclick="keypress(id)">1</div>
+        <div class="btn" id="2" onclick="keypress(id)">2</div>
+        <div class="btn" id="3" onclick="keypress(id)">3</div>
+        <div class="btn" id="4" onclick="keypress(id)">4</div>
+        <div class="btn" id="5" onclick="keypress(id)">5</div>
+        <div class="btn" id="6" onclick="keypress(id)">6</div>
+        <div class="btn" id="7" onclick="keypress(id)">7</div>
+        <div class="btn" id="8" onclick="keypress(id)">8</div>
+        <div class="btn" id="9" onclick="keypress(id)">9</div>
+        <div class="btn" id="0" onclick="keypress(id)">0</div>
+        <div class="btn" id="-" onclick="keypress(id)">-</div>
+        <div class="btn" id="+" onclick="keypress(id)">+</div>
+        <div class="btn" id="del" onclick="keypress(id)">delete</div>
+        <br>
+        <div class="btn" id="tab" style="margin-left: 10px">tab</div>
+        <div class="btn" id="q" onclick="keypress(id)">Q</div>
+        <div class="btn" id="w" onclick="keypress(id)">W</div>
+        <div class="btn" id="e" onclick="keypress(id)">E</div>
+        <div class="btn" id="r" onclick="keypress(id)">R</div>
+        <div class="btn" id="t" onclick="keypress(id)">T</div>
+        <div class="btn" id="y" onclick="keypress(id)">Y</div>
+        <div class="btn" id="u" onclick="keypress(id)">U</div>
+        <div class="btn" id="i" onclick="keypress(id)">I</div>
+        <div class="btn" id="o" onclick="keypress(id)">O</div>
+        <div class="btn" id="p" onclick="keypress(id)">P</div>
+        <div class="btn" id="[]" onclick="keypress(id)">[</div>
+        <div class="btn" id="]" onclick="keypress(id)">]</div>
+        <div class="btn" id="\" onclick="keypress(id)">\</div>
+        <br>
+        <div class="btn" id="cps" style="margin-left: 10px">caps lock</div>
+        <div class="btn" id="a" onclick="keypress(id)">A</div>
+        <div class="btn" id="s" onclick="keypress(id)">S</div>
+        <div class="btn" id="d" onclick="keypress(id)">D</div>
+        <div class="btn" id="f" onclick="keypress(id)">F</div>
+        <div class="btn" id="g" onclick="keypress(id)">G</div>
+        <div class="btn" id="h" onclick="keypress(id)">H</div>
+        <div class="btn" id="j" onclick="keypress(id)">J</div>
+        <div class="btn" id="k" onclick="keypress(id)">K</div>
+        <div class="btn" id="l" onclick="keypress(id)">L</div>
+        <div class="btn" id=";" onclick="keypress(id)">;</div>
+        <div class="btn" id="'" onclick="keypress(id)">'</div>
+        <div class="btn" id="entr">enter</div>
+        <br>
+        <div class="btn" id="shft" style="margin-left: 10px">shift</div>
+        <div class="btn" id="z" onclick="keypress(id)">Z</div>
+        <div class="btn" id="x" onclick="keypress(id)">X</div>
+        <div class="btn" id="c" onclick="keypress(id)">C</div>
+        <div class="btn" id="v" onclick="keypress(id)">V</div>
+        <div class="btn" id="b" onclick="keypress(id)">B</div>
+        <div class="btn" id="n" onclick="keypress(id)">N</div>
+        <div class="btn" id="m" onclick="keypress(id)">M</div>
+        <div class="btn" id="&lt" onclick="keypress(id)">&lt;</div>
+        <div class="btn" id="&gt" onclick="keypress(id)">&gt;</div>
+        <div class="btn" id="?" onclick="keypress(id)">?</div>
+        <div class="btn" id="shft">shift</div>
+        <br>
+        <div class="btn" style="margin-left: 10px">fn</div>
+        <div class="btn">control</div>
+        <div class="btn ">opiton</div>
+        <div class="btn " >command</div>
+        <div class="btn " id="sp" onclick="keypress(id)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="btn ">command</div>
+        <div class="btn ">option</div>
+    </div>
+</body>
+</html>
